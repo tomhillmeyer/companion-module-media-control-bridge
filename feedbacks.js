@@ -54,5 +54,19 @@ module.exports = async function (self) {
 				return self.mediaStatus.connected === false
 			},
 		},
+		albumArtwork: {
+			name: 'Album Artwork',
+			type: 'advanced',
+			label: 'Display album artwork on button',
+			options: [],
+			callback: () => {
+				if (self.mediaStatus.track && self.mediaStatus.track.artwork) {
+					return {
+						imageBuffer: self.mediaStatus.track.artwork,
+					}
+				}
+				return {}
+			},
+		},
 	})
 }

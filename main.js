@@ -139,6 +139,7 @@ class ModuleInstance extends InstanceBase {
 					artist: message.data.artist || '',
 					album: message.data.album || '',
 					duration: message.data.duration || 0,
+					artwork: message.data.artwork || null,
 					appName: message.data.appName || '',
 				}
 				this.updateVariables()
@@ -185,6 +186,7 @@ class ModuleInstance extends InstanceBase {
 			vars.title = this.mediaStatus.track.title || 'N/A'
 			vars.artist = this.mediaStatus.track.artist || 'N/A'
 			vars.album = this.mediaStatus.track.album || 'N/A'
+			vars.artwork = this.mediaStatus.track.artwork || ''
 
 			// Format duration
 			const duration = Math.floor(this.mediaStatus.track.duration / 1000)
@@ -201,6 +203,7 @@ class ModuleInstance extends InstanceBase {
 			vars.title = 'N/A'
 			vars.artist = 'N/A'
 			vars.album = 'N/A'
+			vars.artwork = ''
 			vars.duration = '0:00'
 			vars.position = '0:00'
 		}
