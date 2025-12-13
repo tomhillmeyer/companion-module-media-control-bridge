@@ -1,26 +1,36 @@
 {
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
-	"version": "0.0.0",
+	"id": "media-control-bridge",
+	"name": "media-control-bridge",
+	"shortname": "mcb",
+	"description": "Control macOS media players via Media Control Bridge API",
+	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-media-control-bridge.git",
+	"bugs": "https://github.com/bitfocus/companion-module-media-control-bridge/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
-			"email": "Your email"
+			"name": "Tom Hillmeyer",
+			"email": "tom@tomhillmeyer.com"
 		}
 	],
 	"runtime": {
 		"type": "node22",
 		"api": "nodejs-ipc",
-		"apiVersion": "0.0.0",
+		"apiVersion": "1.0.0",
 		"entrypoint": "../main.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
-	"keywords": []
+	"manufacturer": "Creativeland",
+	"products": [
+		"Media Control Bridge"
+	],
+	"keywords": [
+		"media",
+		"music",
+		"spotify",
+		"apple music",
+		"macos",
+		"playback",
+		"control"
+	]
 }
