@@ -59,10 +59,18 @@ module.exports = async function (self) {
 			type: 'advanced',
 			label: 'Display album artwork on button',
 			options: [],
-			callback: () => {
+			callback: async () => {
 				if (self.mediaStatus.track && self.mediaStatus.track.artwork) {
-					return {
-						imageBuffer: self.mediaStatus.track.artwork,
+					try {
+						const fetch = require('node-fetch')
+						const response = await fetch(self.mediaStatus.track.artwork)
+						const buffer = await response.buffer()
+						return {
+							png64: buffer.toString('base64'),
+						}
+					} catch (error) {
+						self.log('error', `Error fetching album artwork: ${error.message}`)
+						return {}
 					}
 				}
 				return {}
